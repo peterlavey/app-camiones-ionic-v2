@@ -1,0 +1,11 @@
+<form role="form" (submit)="login($event, username.value, password.value)">
+	<ion-list>
+		<ion-input>
+			<input #username type="text" id="username" placeholder="username">
+		</ion-input>
+		<ion-input>
+			<input #password type="password" id="password" placeholder="password">
+		</ion-input>
+		<button full type="submit">Ingresar</button>
+	</ion-list>
+</form>

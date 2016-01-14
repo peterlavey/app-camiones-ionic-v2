@@ -1,0 +1,22 @@
+<ion-content class="has-header">
+  <ion-list *ngFor="#despacho of despachos">
+    <ion-item (click)="seleccionaDespacho(despacho._id)">
+      <ion-thumbnail item-left>
+        <img src="">
+      </ion-thumbnail>
+      <h2>{{despacho.nombre}}</h2>
+      <p>{{despacho.descripcion}}</p>
+      <button clear item-right>View</button>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="despacho">
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="">
+      </ion-thumbnail>
+      <h2>asd</h2>
+      <p>asd</p>
+      <button clear item-right>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
