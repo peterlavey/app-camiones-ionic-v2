@@ -1,5 +1,6 @@
-import {App, Platform, Config} from 'ionic/ionic';
+import {App, Platform, Config, StatusBar} from 'ionic/ionic';
 import {Login} from './pages/login/login';
+import {Headers} from 'angular2/http';
 
 @App({
   templateUrl: 'build/app.html',
@@ -10,9 +11,9 @@ import {Login} from './pages/login/login';
 export class MyApp {
   constructor(platform: Platform) {
     this.root = Login;
-
+   
     platform.ready().then(() => {
-      // Do any necessary cordova or native calls here now that the platform is ready
+      //StatusBar.setStyle(StatusBar.DEFAULT);
     });
   }
 }

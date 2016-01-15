@@ -1,0 +1,31 @@
+<ion-nav-bar class='bar-positive'>
+  <ion-nav-back-button class="button-clear" (click)="listaDespachos()">
+    <i class="ion-arrow-left-c"></i> Back
+  </ion-nav-back-button>
+</ion-nav-bar>
+<ion-content class="has-header">
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        {{despacho.nombre}}-{{nombreEstado[despacho.estado]}}
+      </ion-item>
+      <ion-item-options>
+        <button danger (click)="cambiarEstado()">
+          <icon trash></icon> {{nombreEstado[despacho.estado+1]}}
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-navbar *navbar>
+    <ion-title>
+      Map
+    </ion-title>
+    <ion-nav-items secondary>
+      <button (click)="addMarker()"><icon add></icon>Add Marker</button>
+    </ion-nav-items>  
+  </ion-navbar>
+  <ion-content>
+    <div id="map" style="width: 100%;height: 100%;"></div>  
+  </ion-content>
+</ion-content>
+

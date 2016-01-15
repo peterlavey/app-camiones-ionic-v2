@@ -19,7 +19,7 @@ export class Login{
         	let data = data.json();
             sessionStorage.setItem('token', data.token);
 			sessionStorage.setItem('usuario', data.usuario._id);
-	        this.nav.setRoot(Despacho);
+	        this.nav.push(Despacho);
         }, error => {
             alert(error);
         });
