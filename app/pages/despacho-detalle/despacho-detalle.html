@@ -1,13 +1,32 @@
-<ion-nav-bar class='bar-positive'>
-  <ion-nav-back-button class="button-clear" (click)="listaDespachos()">
-    <i class="ion-arrow-left-c"></i> Back
-  </ion-nav-back-button>
-</ion-nav-bar>
-<ion-content class="has-header">
-  <ion-list>
+<ion-navbar *navbar hideBackButton class="show-navbar android-attr">
+  <ion-title>Fenrir</ion-title>
+  <ion-buttons start>
+    <button (click)="listaDespachos()">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
+
+<ion-content>
+  <ion-card>
+    <img src="build/img/logo.png"/>
+     <button fab fab-right fab-top class="fab-map" (click)="viewMap()">
+      <ion-icon name='pin'></ion-icon>
+    </button>
+    <ion-card-content>
+      <h2 class="card-title">
+        {{despacho.nombre}}
+      </h2>
+      <p>
+        {{despacho.descripcion}}    
+      </p>
+    </ion-card-content>
+    <ion-list>
     <ion-item-sliding>
       <ion-item>
-        {{despacho.nombre}}-{{nombreEstado[despacho.estado]}}
+        <ion-icon name='arrow-back' item-left style="color: #D43626"></ion-icon>
+        Deslice...
+        <ion-badge item-right>{{nombreEstado[despacho.estado]}}</ion-badge>
       </ion-item>
       <ion-item-options>
         <button danger (click)="cambiarEstado()">
@@ -16,16 +35,7 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-  <ion-navbar *navbar>
-    <ion-title>
-      Map
-    </ion-title>
-    <ion-nav-items secondary>
-      <button (click)="addMarker()"><icon add></icon>Add Marker</button>
-    </ion-nav-items>  
-  </ion-navbar>
-  <ion-content>
-    <div id="map" style="width: 100%;height: 100%;"></div>  
-  </ion-content>
+  </ion-card>
 </ion-content>
+
 

@@ -14,7 +14,7 @@ export class Login{
 	login(event, username, password) {
 		event.preventDefault();
 
-		this.http.post("http://localhost:3000/api/usuario/"+username+"/"+password)
+		this.http.post("http://peaceful-wildwood-5772.herokuapp.com/api/usuario/"+username+"/"+password)
         .subscribe(data => {
         	let data = data.json();
             sessionStorage.setItem('token', data.token);

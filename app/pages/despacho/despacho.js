@@ -10,7 +10,7 @@ export class Despacho {
   		this.http=http;
       this.nav=nav;
   		let id=sessionStorage.getItem('usuario');
-  		this.http.get('http://localhost:3000/api/usuario/'+id)
+  		this.http.get('http://peaceful-wildwood-5772.herokuapp.com/api/usuario/'+id)
       .subscribe(data => {
       	let data = data.json();
       	this.despachos=data;
@@ -27,7 +27,7 @@ export class Despacho {
   			}
   		});
       this.nav.push(DespachoDetalle, {
-        despacho: this.despacho
+        despacho: this.despacho[0]
       });
       //this.nav.setRoot(DespachoDetalle);
   	}

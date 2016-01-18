@@ -1,8 +1,16 @@
-.scroll {
-    height: 100%;
+button[fab].fab-map {
+  	top: 190px;
+  	z-index: 50;
 }
- 
-#map {
-    width: 100%;
-    height: 100%;
+body.ios button[fab].fab-map {
+  	width: 40px;
+  	height: 40px;
+}
+body.md button[fab].fab-map {
+  	top: 220px;
+}
+
+.button-fab{
+	width: 40px;
+  	height: 40px;
 }
