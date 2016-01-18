@@ -1,6 +1,5 @@
 import {Page, NavController, NavParams, Geolocation} from 'ionic/ionic';
 import {Http, Headers, RequestOptions} from 'angular2/http';
-import {Despacho} from '../despacho/despacho';
 import {Map} from '../map/map';
 
 @Page({
@@ -20,9 +19,6 @@ export class DespachoDetalle {
 
   		this.despacho=navParams.get('despacho');
   		this.nombreEstado=["Terminado!", "En camino", "Esperando...", "Despachando", "Terminado!"];
-  	}
-  	listaDespachos(){
-  		this.nav.push(Despacho);
   	}
   	cambiarEstado(){
   		if(this.despacho.estado<5){

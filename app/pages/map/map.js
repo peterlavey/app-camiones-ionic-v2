@@ -1,12 +1,10 @@
-import {Page, NavController, NavParams, Geolocation} from 'ionic/ionic';
-import {DespachoDetalle} from '../despacho-detalle/despacho-detalle';
+import {Page, NavParams, Geolocation} from 'ionic/ionic';
 
 @Page({
   	templateUrl: 'build/pages/map/map.html',
 })
 export class Map {
-  	constructor(nav:NavController, navParams:NavParams) {
-  		this.nav=nav;
+  	constructor(navParams:NavParams) {
   		this.navParams=navParams;
   		this.map = null;
 
@@ -22,10 +20,17 @@ export class Map {
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       }
- 
-      this.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+     /* let destroyer = document.getElementById("map") || document.createElement('div');
+      destroyer.remove();
+      let wrapper = document.getElementById("wrapper");
+      let node = document.createElement('div');     
+      node.setAttribute('id', 'map');    
+      node.setAttribute('style', 'width: 100%;height: 100%;');  
+      wrapper.appendChild(node);                             
+*/
+      let map = new google.maps.Map(document.getElementById("map"), mapOptions);
 	  }
-    addMarker(){
+    /*addMarker(){
       let marker = new google.maps.Marker({
         map: this.map,
         animation: google.maps.Animation.DROP,
@@ -41,11 +46,5 @@ export class Map {
       google.maps.event.addListener(marker, 'click', function(){
         infoWindow.open(this.map, marker);
       });   
-    }
-    viewDetalleDespacho(){
-      this.map={};
-      this.nav.push(DespachoDetalle, {
-        despacho: this.despacho
-      });
-    }
+    }*/
 }

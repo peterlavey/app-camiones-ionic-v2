@@ -1,10 +1,5 @@
-<ion-navbar *navbar hideBackButton class="show-navbar android-attr">
+<ion-navbar *navbar class="show-navbar android-attr">
   <ion-title>Fenrir</ion-title>
-  <ion-buttons start>
-    <button (click)="listaDespachos()">
-      <ion-icon name='menu'></ion-icon>
-    </button>
-  </ion-buttons>
 </ion-navbar>
 
 <ion-content>
@@ -21,14 +16,14 @@
         {{despacho.descripcion}}    
       </p>
     </ion-card-content>
-    <ion-list>
-    <ion-item-sliding>
+    <ion-list *ngIf="despacho.estado < 4">
+    <ion-item-sliding > 
       <ion-item>
         <ion-icon name='arrow-back' item-left style="color: #D43626"></ion-icon>
         Deslice...
         <ion-badge item-right>{{nombreEstado[despacho.estado]}}</ion-badge>
       </ion-item>
-      <ion-item-options>
+      <ion-item-options >
         <button danger (click)="cambiarEstado()">
           <icon trash></icon> {{nombreEstado[despacho.estado+1]}}
         </button>

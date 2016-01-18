@@ -1,3 +1,11 @@
+<ion-navbar *navbar hideBackButton class="show-navbar android-attr">
+  <ion-title>Fenrir</ion-title>
+  <ion-buttons start>
+    <button (click)="listaDespachos()">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-navbar>
 <ion-content class="has-header">
   <ion-list >
     <ion-item *ngFor="#despacho of despachos" (click)="seleccionaDespacho(despacho._id)">
